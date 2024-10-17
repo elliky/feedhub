@@ -81,10 +81,9 @@ export default function RootLayout({
             </aside>
 
             {/* Content */}
-            <main className="flex-grow p-8 bg-white">{children}</main>
+            <main className="flex-grow p-8">{children}</main>
           </div>
         </div>
-        {children}
       </body>
     </html>
   );
