@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 import { collection, addDoc, getDocs } from "firebase/firestore";
-import { db } from "@/src/lib/firebase/firebaseConfig";
+import { db } from "@/app/firebase/firebaseConfig";
 
 export default function Page() {
   const [inputValue, setInputValue] = useState<string>("");
