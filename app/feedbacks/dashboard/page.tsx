@@ -20,6 +20,7 @@ import {
 import { collection, getDocs, deleteDoc, doc, updateDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebaseConfig";
 import { useRouter } from "next/navigation";
+import FeedbackDetailModal from "@/app/components/FeedbackDetailModal";
 
 export default function Dashboard() {
   const [feedbacks, setFeedbacks] = useState([]);
@@ -201,6 +202,14 @@ export default function Dashboard() {
           ) : null}
         </DialogActions>
       </Dialog>
+
+      {/* Feedback Detail Modal */}
+      {open && selectedFeedback && (
+        <FeedbackDetailModal
+          onClose={handleClose} // Close modal function
+          feedback={selectedFeedback} // Selected feedback data
+        />
+      )}
 
       {/* Add new feedback button */}
       <Button variant="contained" color="primary" onClick={() => router.push("/feedbacks/add")} sx={{ marginTop: 2 }}>

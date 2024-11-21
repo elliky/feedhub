@@ -1,13 +1,9 @@
-import {
-  GoogleAuthProvider,
-  signInWithPopup,
-  onAuthStateChanged as _onAuthStateChanged,
-} from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged as _onAuthStateChanged } from "firebase/auth";
 
 import { auth } from "@/src/lib/firebase/clientApp";
 
 export function onAuthStateChanged(cb) {
-	return _onAuthStateChanged(auth, cb);
+  return _onAuthStateChanged(auth, cb);
 }
 
 export async function signInWithGoogle() {

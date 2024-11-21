@@ -4,9 +4,9 @@ import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth"; // Firebase authentication
 import { auth } from "@/app/firebase/firebaseConfig"; // Firebase config
 import { useRouter } from "next/navigation"; // Router for page navigation
-import CustomButton from "../components/CustomButton"; // Custom Material UI Button component
 import TextField from "@mui/material/TextField"; // Material UI TextField component
 import Box from "@mui/material/Box"; // Material UI Box component
+import Button from "@mui/material/Button"; // Material UI Button component
 
 export default function LoginPage() {
   const [email, setEmail] = useState(""); // State to store email input
@@ -52,8 +52,10 @@ export default function LoginPage() {
           margin="normal"
           fullWidth
         />
-        {/* CustomButton for login action */}
-        <CustomButton type="submit">Log In</CustomButton>
+        {/* Material UI Button for login action */}
+        <Button type="submit" variant="contained" color="primary" fullWidth>
+          Log In
+        </Button>
       </form>
     </Box>
   );
